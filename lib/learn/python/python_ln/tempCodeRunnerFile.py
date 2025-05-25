@@ -1,0 +1,2 @@
+
+# print("Average : ", s.average())
