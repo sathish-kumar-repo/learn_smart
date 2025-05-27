@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/sass/topicsName/SASSTopics.dart';
+import 'package:learn_smart/learn/web/SASS/topicsName/SASSTopics.dart';
 
 class SassComments extends StatefulWidget {
   const SassComments({Key? key}) : super(key: key);

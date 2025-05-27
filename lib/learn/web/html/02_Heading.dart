@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/html/topicName/HTMLTopics.dart';
+import 'package:learn_smart/learn/web/HTML/topicName/HTMLTopics.dart';
 
 class HeadingTagHTMl extends StatefulWidget {
   const HeadingTagHTMl({Key? key}) : super(key: key);

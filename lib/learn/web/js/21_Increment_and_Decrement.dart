@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/js/topicName/jsTopics.dart';
+import 'package:learn_smart/learn/web/JS/topicName/jsTopics.dart';
 
 class Increment_and_Decrement extends StatefulWidget {
   const Increment_and_Decrement({Key? key}) : super(key: key);

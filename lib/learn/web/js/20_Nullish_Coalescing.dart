@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/js/topicName/jsTopics.dart';
+import 'package:learn_smart/learn/web/JS/topicName/jsTopics.dart';
 
 class Nullish extends StatefulWidget {
   const Nullish({Key? key}) : super(key: key);

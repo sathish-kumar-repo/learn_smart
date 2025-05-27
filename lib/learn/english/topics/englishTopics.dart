@@ -6,6 +6,8 @@ import 'package:learn_smart/learn/english/e6_basic_english_sentence.dart';
 import 'package:learn_smart/learn/english/e7_dialy_use_sentence_in_life.dart';
 import 'package:learn_smart/widgets/code_pro.dart';
 
+import '../e8_dailY_use_english_sentence.dart';
+
 List<Topics> englishTopics = [
   Topics('Self Introduction', const SelfIntroduction(), 'Basic English'),
   Topics('Introduce My Friend', const IntroduceMyFriend(), 'Basic English'),
@@ -15,6 +17,6 @@ List<Topics> englishTopics = [
       'Basic English Sentence', const BasicEnglishSentence(), 'Basic English'),
   Topics(
       'Daily Sentence in Life', const DailySentenceInLife(), 'Basic English'),
-  Topics('Daily Use English Sentence', const DailySentenceInLife(),
+  Topics('Daily Use English Sentence', const DailyUseEnglishSentence(),
       'Basic English'),
 ];

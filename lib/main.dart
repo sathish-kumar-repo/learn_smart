@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'screens/home/home_screen.dart';
+import 'package:learn_smart/router/router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); // For system ui
-
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
 
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
@@ -28,35 +22,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const Color appClr = Colors.deepPurpleAccent;
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       debugShowCheckedModeBanner: false,
       title: 'Code Pro',
-      theme: ThemeData(
-        useMaterial3: false,
+      theme: themeData(),
+    );
+  }
+
+  ThemeData themeData() {
+    const Color appClr = Colors.deepPurpleAccent;
+    return ThemeData(
+      useMaterial3: false,
+      brightness: Brightness.light,
+      scaffoldBackgroundColor: Colors.white,
+      colorScheme: ColorScheme.fromSeed(
         brightness: Brightness.light,
-        scaffoldBackgroundColor: Colors.white,
-        colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.light,
-          seedColor: appClr,
-          primary: appClr,
-          secondary: appClr.withOpacity(0.8),
-        ),
-        textTheme: TextTheme(
-          bodyMedium: GoogleFonts.roboto(),
-          bodyLarge: GoogleFonts.roboto(),
-          bodySmall: GoogleFonts.roboto(),
-        ),
+        seedColor: appClr,
+        primary: appClr,
+        secondary: appClr.withOpacity(0.8),
       ),
-      home: SelectionArea(child: const HomeScreen()),
+      textTheme: TextTheme(
+        bodyMedium: GoogleFonts.roboto(),
+        bodyLarge: GoogleFonts.roboto(),
+        bodySmall: GoogleFonts.roboto(),
+      ),
     );
   }
 }
-
-//  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//             crossAxisCount: 2,
-//             childAspectRatio:
-//                 (MediaQuery.of(context).size.height - 50 - 25) / (4 * 240),
-//             mainAxisSpacing: 10,
-//             crossAxisSpacing: 10,
-//           ),

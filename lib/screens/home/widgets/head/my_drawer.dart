@@ -15,7 +15,7 @@ class MyDrawer extends StatelessWidget {
             currentAccountPicture: ClipOval(
               child: Image(
                 image: NetworkImage(
-                  "https://media.istockphoto.com/id/927570754/photo/beautiful-woman.jpg?s=1024x1024&w=is&k=20&c=vqLr2Gnv3M44AlknZESOF6dUkZbNNavcXYEcodRdZ2c=",
+                  "https://sathish-kumar-repo.github.io/study/web-images/profile.jpg",
                 ),
                 fit: BoxFit.cover,
               ),

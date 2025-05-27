@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/react/topicsName/reactTopics.dart';
+import 'package:learn_smart/learn/web/React/topicsName/reactTopics.dart';
 
 class ReactJSX extends StatefulWidget {
   const ReactJSX({Key? key}) : super(key: key);

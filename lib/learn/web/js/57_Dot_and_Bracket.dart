@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/js/topicName/jsTopics.dart';
+import 'package:learn_smart/learn/web/JS/topicName/jsTopics.dart';
 
 class D_and_B extends StatefulWidget {
   const D_and_B({Key? key}) : super(key: key);

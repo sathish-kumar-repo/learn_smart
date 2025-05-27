@@ -18,7 +18,7 @@ class _DailySentenceInLifeState extends State<DailySentenceInLife> {
     return Scaffold(
       appBar: MyAppBar(),
       drawer: MyDrawer(
-        activeIndex: 7,
+        activeIndex: 6,
         topicsName: englishTopics,
         img: 'english.jpg',
       ),

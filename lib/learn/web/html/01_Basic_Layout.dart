@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/html/topicName/HTMLTopics.dart';
+import 'package:learn_smart/learn/web/HTML/topicName/HTMLTopics.dart';
 
 class BasicLayoutHTMl extends StatefulWidget {
   const BasicLayoutHTMl({Key? key}) : super(key: key);

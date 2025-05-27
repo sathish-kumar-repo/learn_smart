@@ -19,7 +19,7 @@ class _DailyUseEnglishSentenceState extends State<DailyUseEnglishSentence> {
     return Scaffold(
       appBar: MyAppBar(),
       drawer: MyDrawer(
-        activeIndex: 8,
+        activeIndex: 7,
         topicsName: englishTopics,
         img: 'english.jpg',
       ),

@@ -3,7 +3,7 @@ import 'package:learn_smart/widgets/my_page.dart';
 import 'package:learn_smart/widgets/my_drawer.dart';
 import 'package:learn_smart/widgets/text_widget.dart';
 import 'package:learn_smart/widgets/app_bar.dart';
-import 'package:learn_smart/learn/web/css/TopicName/cssTopics.dart';
+import 'package:learn_smart/learn/web/CSS/TopicName/cssTopics.dart';
 
 class reference extends StatefulWidget {
   const reference({Key? key}) : super(key: key);

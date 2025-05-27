@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/css/TopicName/cssTopics.dart';
+import 'package:learn_smart/learn/web/CSS/TopicName/cssTopics.dart';
 
 class PlaceitemsProperty extends StatefulWidget {
   const PlaceitemsProperty({Key? key}) : super(key: key);

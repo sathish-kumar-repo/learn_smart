@@ -18,7 +18,7 @@ class _MindSentenceState extends State<MindSentence> {
     return Scaffold(
       appBar: MyAppBar(),
       drawer: MyDrawer(
-        activeIndex: 4,
+        activeIndex: 3,
         topicsName: englishTopics,
         img: 'english.jpg',
       ),

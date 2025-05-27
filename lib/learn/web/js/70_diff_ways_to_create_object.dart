@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/js/topicName/jsTopics.dart';
+import 'package:learn_smart/learn/web/JS/topicName/jsTopics.dart';
 
 class diff_ways_to_create_object extends StatefulWidget {
   const diff_ways_to_create_object({Key? key}) : super(key: key);

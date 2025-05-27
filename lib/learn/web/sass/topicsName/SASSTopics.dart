@@ -1,20 +1,20 @@
 import 'package:learn_smart/modal/topics.dart';
-import 'package:learn_smart/learn/web/sass/sass01_Intro.dart';
-import 'package:learn_smart/learn/web/sass/sass02_Environmental_Setup.dart';
-import 'package:learn_smart/learn/web/sass/sass03_comments.dart';
-import 'package:learn_smart/learn/web/sass/sass04_variables.dart';
-import 'package:learn_smart/learn/web/sass/sass05_Datatypes.dart';
-import 'package:learn_smart/learn/web/sass/sass06_nesting_rules.dart';
-import 'package:learn_smart/learn/web/sass/sass07_Interpolation.dart';
-import 'package:learn_smart/learn/web/sass/sass08_Import_and_partials.dart';
-import 'package:learn_smart/learn/web/sass/sass09_mixins_and_include.dart';
-import 'package:learn_smart/learn/web/sass/sass10_Functions.dart';
-import 'package:learn_smart/learn/web/sass/sass11_extend.dart';
-import 'package:learn_smart/learn/web/sass/sass12_ErrorHandling.dart';
-import 'package:learn_smart/learn/web/sass/sass13_BuildinModules.dart';
-import 'package:learn_smart/learn/web/sass/sass14_Operators.dart';
-import 'package:learn_smart/learn/web/sass/sass15_conditionalStatement.dart';
-import 'package:learn_smart/learn/web/sass/sass16_Looping_Statement.dart';
+import 'package:learn_smart/learn/web/SASS/sass01_Intro.dart';
+import 'package:learn_smart/learn/web/SASS/sass02_Environmental_Setup.dart';
+import 'package:learn_smart/learn/web/SASS/sass03_comments.dart';
+import 'package:learn_smart/learn/web/SASS/sass04_variables.dart';
+import 'package:learn_smart/learn/web/SASS/sass05_Datatypes.dart';
+import 'package:learn_smart/learn/web/SASS/sass06_nesting_rules.dart';
+import 'package:learn_smart/learn/web/SASS/sass07_Interpolation.dart';
+import 'package:learn_smart/learn/web/SASS/sass08_Import_and_partials.dart';
+import 'package:learn_smart/learn/web/SASS/sass09_mixins_and_include.dart';
+import 'package:learn_smart/learn/web/SASS/sass10_Functions.dart';
+import 'package:learn_smart/learn/web/SASS/sass11_extend.dart';
+import 'package:learn_smart/learn/web/SASS/sass12_ErrorHandling.dart';
+import 'package:learn_smart/learn/web/SASS/sass13_BuildinModules.dart';
+import 'package:learn_smart/learn/web/SASS/sass14_Operators.dart';
+import 'package:learn_smart/learn/web/SASS/sass15_conditionalStatement.dart';
+import 'package:learn_smart/learn/web/SASS/sass16_Looping_Statement.dart';
 
 List<Topics> sassTopics = [
   Topics('intro', const SassIntro(), 'sass'),

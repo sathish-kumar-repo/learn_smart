@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/js/topicName/jsTopics.dart';
+import 'package:learn_smart/learn/web/JS/topicName/jsTopics.dart';
 
 class Primitive_and_Reference extends StatefulWidget {
   const Primitive_and_Reference({Key? key}) : super(key: key);

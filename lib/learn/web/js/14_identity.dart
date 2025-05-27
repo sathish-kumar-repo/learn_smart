@@ -3,7 +3,7 @@ import 'package:learn_smart/widgets/my_page.dart';
 import 'package:learn_smart/widgets/my_drawer.dart';
 import 'package:learn_smart/widgets/text_widget.dart';
 import 'package:learn_smart/widgets/app_bar.dart';
-import 'package:learn_smart/learn/web/js/topicName/jsTopics.dart';
+import 'package:learn_smart/learn/web/JS/topicName/jsTopics.dart';
 
 class identity extends StatefulWidget {
   const identity({Key? key}) : super(key: key);

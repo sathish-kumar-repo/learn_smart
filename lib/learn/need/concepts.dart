@@ -3,7 +3,7 @@ import 'package:learn_smart/widgets/my_page.dart';
 import 'package:learn_smart/widgets/my_drawer.dart';
 import 'package:learn_smart/widgets/text_widget.dart';
 import 'package:learn_smart/widgets/app_bar.dart';
-import 'package:learn_smart/learn/basic/Course10_CPP_Program/topicName/cpp_program_Topics.dart';
+import 'package:learn_smart/learn/CPP%20Program/topicName/cpp_program_Topics.dart';
 
 class Paste extends StatefulWidget {
   const Paste({Key? key}) : super(key: key);

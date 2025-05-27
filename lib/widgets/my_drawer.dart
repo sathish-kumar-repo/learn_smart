@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_smart/data/clr_list.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-
 import '../modal/topics.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -22,16 +20,22 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ScrollablePositionedList.builder(
+        padding: const EdgeInsets.all(0),
         physics: BouncingScrollPhysics(),
         initialScrollIndex: activeIndex - 1,
         itemCount: topicsName.length,
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          var randomItem = (randomColor.toList()..shuffle()).first;
           final isCurrentItem = (activeIndex - 1) == index;
           return Column(
             children: [
-              const Divider(height: 0.1),
+              if (index == 0)
+                DrawerHeader(
+                  child: Image.asset(
+                    'assets/images/$img',
+                    fit: contain ? BoxFit.contain : BoxFit.cover,
+                  ),
+                ),
               GestureDetector(
                 child: ListTile(
                   title: Text(
@@ -44,15 +48,18 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   trailing: Icon(
-                    Icons.school,
-                    color: randomItem,
+                    Icons.arrow_forward_ios,
+                    size: 18,
+                    color: isCurrentItem
+                        ? Theme.of(context).colorScheme.primary
+                        : Colors.black54,
                   ),
                   subtitle: Text(
                     topicsName[index].subTopics,
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).pushReplacement(
+                  Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => topicsName[index].pages,
                     ),

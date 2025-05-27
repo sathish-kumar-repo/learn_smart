@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/css/TopicName/cssTopics.dart';
+import 'package:learn_smart/learn/web/CSS/TopicName/cssTopics.dart';
 
 class OpacityProperty extends StatefulWidget {
   const OpacityProperty({Key? key}) : super(key: key);

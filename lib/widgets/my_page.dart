@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'responsive.dart';
 
 class MyPage extends StatelessWidget {
@@ -20,25 +19,29 @@ class MyPage extends StatelessWidget {
               flex: 1,
             ),
           Expanded(
-            child: _buildView(),
+            child: _buildView(context),
             flex: 3,
           ),
         ],
       ),
-      mobile: _buildView(),
+      mobile: _buildView(context),
     );
   }
 
-  SingleChildScrollView _buildView() {
-    return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+  Widget _buildView(BuildContext context) {
+    return SelectionArea(
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 15),
         width: double.infinity,
-        child: SelectionArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: children,
+        height: MediaQuery.of(context).size.height,
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 15),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children,
+            ),
           ),
         ),
       ),

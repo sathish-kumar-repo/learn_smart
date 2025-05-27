@@ -97,7 +97,7 @@ class _HeaderBodyState extends State<HeaderBody> {
           height: 10,
         ),
         const Text(
-          "Welcome to Code Pro, where our motto is 'Learn today, Live another day.' We believe that continuous learning empowers you to face tomorrow's challenges with confidence. Dive into our resources, expand your knowledge, and prepare yourself for a brighter future..0",
+          "Welcome to Code Pro, where our motto is 'Learn today, Live another day.' We believe that continuous learning empowers you to face tomorrow's challenges with confidence. Dive into our resources, expand your knowledge, and prepare yourself for a brighter future..",
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.black54,

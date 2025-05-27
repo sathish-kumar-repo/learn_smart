@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/sass/topicsName/SASSTopics.dart';
+import 'package:learn_smart/learn/web/SASS/topicsName/SASSTopics.dart';
 
 class SassExtend extends StatefulWidget {
   const SassExtend({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _SassExtendState extends State<SassExtend> {
       ),
       body: MyPage(
         children: [
-          const H1('@functions'),
+          const H1('@extend'),
           Code(title: '_alert.scss', code: code1, type: 'scss'),
           const H4('Output'),
           Code(title: 'main.css', code: code2, type: 'css'),

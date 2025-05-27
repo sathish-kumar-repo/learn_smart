@@ -18,7 +18,7 @@ class _BasicEnglishSentenceState extends State<BasicEnglishSentence> {
     return Scaffold(
       appBar: MyAppBar(),
       drawer: MyDrawer(
-        activeIndex: 6,
+        activeIndex: 5,
         topicsName: englishTopics,
         img: 'english.jpg',
       ),

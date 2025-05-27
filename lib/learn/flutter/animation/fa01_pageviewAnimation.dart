@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/flutter/animation/topicName/flutterAnimationTopic.dart';
+import 'package:learn_smart/learn/Flutter/Animation/topicName/flutterAnimationTopic.dart';
 
 import 'Live/01_live.dart';
 import 'Live/01_live2.dart';

@@ -1,5 +1,5 @@
 import 'package:learn_smart/widgets/code_pro.dart';
-import 'package:learn_smart/learn/web/js/topicName/jsTopics.dart';
+import 'package:learn_smart/learn/web/JS/topicName/jsTopics.dart';
 
 class Use_of_const_for_Creating_Arrays extends StatefulWidget {
   const Use_of_const_for_Creating_Arrays({Key? key}) : super(key: key);

@@ -3,7 +3,7 @@ import 'package:learn_smart/widgets/my_page.dart';
 import 'package:learn_smart/widgets/my_drawer.dart';
 import 'package:learn_smart/widgets/text_widget.dart';
 import 'package:learn_smart/widgets/app_bar.dart';
-import 'package:learn_smart/learn/web/react/topicsName/reactTopics.dart';
+import 'package:learn_smart/learn/web/React/topicsName/reactTopics.dart';
 
 class ReactIntro extends StatefulWidget {
   const ReactIntro({Key? key}) : super(key: key);

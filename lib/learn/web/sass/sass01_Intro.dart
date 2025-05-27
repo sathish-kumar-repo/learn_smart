@@ -3,7 +3,7 @@ import 'package:learn_smart/widgets/my_page.dart';
 import 'package:learn_smart/widgets/my_drawer.dart';
 import 'package:learn_smart/widgets/text_widget.dart';
 import 'package:learn_smart/widgets/app_bar.dart';
-import 'package:learn_smart/learn/web/sass/topicsName/SASSTopics.dart';
+import 'package:learn_smart/learn/web/SASS/topicsName/SASSTopics.dart';
 
 class SassIntro extends StatefulWidget {
   const SassIntro({Key? key}) : super(key: key);
