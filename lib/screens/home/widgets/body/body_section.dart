@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../data/card_list.dart';
 import '../../../../modal/course_modal.dart';
 import '../../../../widgets/responsive.dart';
-import 'product_detail.dart';
+import 'course_detail.dart';
 
 class BodySection extends StatelessWidget {
   const BodySection({
