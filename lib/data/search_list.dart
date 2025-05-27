@@ -12,7 +12,6 @@ import 'package:learn_smart/learn/web/html/topicName/HTMLTopics.dart';
 import 'package:learn_smart/learn/flutter/animation/topicName/flutterAnimationTopic.dart';
 import 'package:learn_smart/learn/flutter/flutter_concepts/topicName/flutterConceptsTopic.dart';
 import 'package:learn_smart/learn/flutter/flutter_udemy_course/topicsName/flutterCourseTopics.dart';
-import 'package:learn_smart/learn/flutter/flutter_widget/TopicName/widgetTopic.dart';
 import 'package:learn_smart/learn/python/python_ln/topicName/pythonTopics.dart';
 import 'package:learn_smart/learn/flutter/dart_core/topicsName/dartCoreTopics.dart';
 import 'package:learn_smart/learn/basic/Course9_CPP/topicName/cppTopic.dart';
@@ -25,7 +24,6 @@ List<List<Topics>> searchList = [
   javaScriptTopics,
   cssTopics,
   hTMLTopics,
-  flutterWidgetsTopics,
   flutterAnimationTopics,
   flutterConceptsTopics,
   flutterCourseTopics,

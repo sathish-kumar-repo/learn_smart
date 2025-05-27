@@ -14,7 +14,6 @@ import 'package:learn_smart/learn/web/css/01_Selectors.dart';
 import 'package:learn_smart/learn/web/html/01_Basic_Layout.dart';
 import 'package:learn_smart/learn/flutter/animation/fa01_pageviewAnimation.dart';
 import 'package:learn_smart/learn/flutter/flutter_concepts/fc01_FetchAPI.dart';
-import 'package:learn_smart/learn/flutter/flutter_widget/fw1_AboutDialog.dart';
 import 'package:learn_smart/learn/python/python_ln/Python01_Python_Introduction.dart';
 import 'package:learn_smart/learn/flutter/dart_core/dart_core0_Course_Overview.dart';
 import 'package:learn_smart/learn/basic/Course9_CPP/cpp1_Intro.dart';
@@ -25,11 +24,6 @@ Map<String, List<Course>> cardData = {
       course: 'Dart Programming',
       img: 'dart.png',
       page: DartCourseOverview(),
-    ),
-    Course(
-      course: 'Widgets',
-      img: 'Flutter.png',
-      page: const FlutterAboutDialogFlutterAllWidgets(),
     ),
     Course(
       course: 'Animation',
