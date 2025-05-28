@@ -5,7 +5,7 @@ import 'package:learn_smart/theme/app_theme.dart';
 import '../../../../data/search_list.dart';
 
 final lottie = Image.asset(
-  cacheWidth: 300,
+  cacheWidth: 400,
   'assets/logo/character.png',
 );
 
@@ -22,6 +22,7 @@ class HeaderContainer extends StatelessWidget {
         Row(
           children: [
             const Expanded(flex: 3, child: HeaderBody()),
+            SizedBox(width: 30),
             Expanded(
               flex: 2,
               child: lottie,
