@@ -12,7 +12,12 @@ class HeaderSection extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.all(8),
-      decoration: gradientDecoration(),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage("assets/logo/bg.jpg"),
+        ),
+      ),
       child: Column(
         children: [
           Container(
@@ -32,18 +37,4 @@ class HeaderSection extends StatelessWidget {
       ),
     );
   }
-}
-
-BoxDecoration gradientDecoration() {
-  return const BoxDecoration(
-    gradient: LinearGradient(
-      begin: Alignment.centerLeft,
-      end: Alignment.centerRight,
-      colors: [
-        Color.fromARGB(255, 120, 187, 241),
-        // Color.fromARGB(255, 145, 211, 22),
-        Colors.deepPurpleAccent,
-      ],
-    ),
-  );
 }

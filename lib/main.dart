@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:learn_smart/router/router.dart';
+import 'package:learn_smart/theme/app_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); // For system ui
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
   }
 
   ThemeData themeData() {
-    const Color appClr = Colors.deepPurpleAccent;
+    const appClr = AppTheme.appClr;
     return ThemeData(
       useMaterial3: false,
       brightness: Brightness.light,

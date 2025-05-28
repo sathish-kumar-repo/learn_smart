@@ -65,7 +65,7 @@ class MyLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      "assets/logo/logo_android_1024x1024.png",
+      "assets/logo/code.png",
       height: 50,
       width: 50,
     );

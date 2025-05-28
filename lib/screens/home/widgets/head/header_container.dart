@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:learn_smart/modal/compliation_search.dart';
-import 'package:lottie/lottie.dart';
-
+import 'package:learn_smart/theme/app_theme.dart';
 import '../../../../data/search_list.dart';
 
-final lottie = Lottie.network(
-  "https://lottie.host/c642558f-e7e2-465c-86a8-e215e9fc5564/Hpqm3CtUTX.json",
+final lottie = Image.asset(
+  cacheWidth: 300,
+  'assets/logo/character.png',
 );
 
 class HeaderContainer extends StatelessWidget {
@@ -40,7 +40,11 @@ class MobileHeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [lottie, const HeaderBody()],
+      children: [
+        lottie,
+        SizedBox(height: 20),
+        const HeaderBody(),
+      ],
     );
   }
 }
@@ -56,6 +60,7 @@ class HeaderBody extends StatefulWidget {
 
 class _HeaderBodyState extends State<HeaderBody> {
   final List<CompilationSearch> searchListRoute = [];
+  bool _isEnableClearIcon = false;
 
   @override
   void initState() {
@@ -83,6 +88,7 @@ class _HeaderBodyState extends State<HeaderBody> {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 53,
+            color: AppTheme.accentColor,
           ),
         ),
         const SizedBox(
@@ -91,7 +97,10 @@ class _HeaderBodyState extends State<HeaderBody> {
         const AutoSizeText(
           "Live another day",
           maxLines: 1,
-          style: TextStyle(fontSize: 53),
+          style: TextStyle(
+            fontSize: 53,
+            color: AppTheme.accentColor,
+          ),
         ),
         const SizedBox(
           height: 10,
@@ -100,7 +109,7 @@ class _HeaderBodyState extends State<HeaderBody> {
           "Welcome to Code Pro, where our motto is 'Learn today, Live another day.' We believe that continuous learning empowers you to face tomorrow's challenges with confidence. Dive into our resources, expand your knowledge, and prepare yourself for a brighter future..",
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.black54,
+            color: Colors.black87,
             letterSpacing: 0.5,
           ),
         ),
@@ -135,6 +144,16 @@ class _HeaderBodyState extends State<HeaderBody> {
               controller: textEditingController,
               focusNode: focusNode,
               decoration: InputDecoration(
+                suffixIcon: _isEnableClearIcon
+                    ? GestureDetector(
+                        onTap: () => textEditingController.clear(),
+                        child: Icon(
+                          Icons.clear,
+                          size: 20,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      )
+                    : null,
                 prefixIcon: Icon(
                   Icons.search,
                   color: Theme.of(context).colorScheme.primary,
@@ -149,7 +168,10 @@ class _HeaderBodyState extends State<HeaderBody> {
           ),
         );
       },
-      optionsBuilder: (TextEditingValue textEditingValue) {
+      optionsBuilder: (textEditingValue) {
+        setState(() {
+          _isEnableClearIcon = textEditingValue.text.isNotEmpty;
+        });
         if (textEditingValue.text.isEmpty) {
           return [];
         }
