@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../widgets/responsive.dart';
 import 'header_web_menu.dart';
 
@@ -40,12 +41,17 @@ class MyBrand extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      "Code Pro",
-      style: TextStyle(
-        fontSize: 25,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
+    return InkWell(
+      onTap: () {
+        context.go('/');
+      },
+      child: Text(
+        "Code Pro",
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
       ),
     );
   }

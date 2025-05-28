@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_smart/screens/home/widgets/head/header.dart';
 import 'package:learn_smart/widgets/code_pro.dart';
+import 'back_btn.dart';
 import 'responsive.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -24,7 +25,15 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         constraints: const BoxConstraints(maxWidth: 1233),
         child: Row(
           children: [
-            if (Navigator.of(context).canPop()) _buildBackBtn(context),
+            if (Navigator.of(context).canPop())
+              Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: BackBtn(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
             MyBrand(),
             Spacer(),
             if (!Responsive.isDesktop(context))
@@ -40,22 +49,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildBackBtn(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 5),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.of(context).pop();
-        },
-        child: Icon(
-          size: 20,
-          Icons.arrow_back_ios,
-          color: Colors.white,
         ),
       ),
     );

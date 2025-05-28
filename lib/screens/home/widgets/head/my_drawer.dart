@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../utils/web_menu_utils.dart';
+
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
@@ -28,36 +30,15 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            onTap: () {},
-            title: const Text("Home"),
-            leading: const Icon(Icons.home),
-          ),
-          ListTile(
-            onTap: () {},
-            title: const Text("Favorite"),
-            leading: const Icon(Icons.favorite),
-          ),
-          ListTile(
-            onTap: () {},
-            title: const Text("Them"),
-            leading: const Icon(Icons.dark_mode),
-          ),
-          ListTile(
-            onTap: () {},
-            title: const Text("Message"),
-            leading: const Icon(Icons.message),
-          ),
-          ListTile(
-            onTap: () {},
-            title: const Text("Review"),
-            leading: const Icon(Icons.reviews),
-          ),
-          ListTile(
-            onTap: () {},
-            title: const Text("Share"),
-            leading: const Icon(Icons.share),
-          ),
+          ...WebMenuUtils.menuList.map((menu) {
+            return ListTile(
+              onTap: () {
+                WebMenuUtils.launchMenu(menu, context);
+              },
+              title: Text(WebMenuUtils.getMenuName(menu)),
+              leading: Icon(WebMenuUtils.getMenuIcon(menu)),
+            );
+          }).toList(),
         ],
       ),
     );

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class FooterMenu extends StatelessWidget {
+class FooterMenu extends StatefulWidget {
   const FooterMenu({super.key});
 
+  @override
+  State<FooterMenu> createState() => _FooterMenuState();
+}
+
+class _FooterMenuState extends State<FooterMenu> {
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -10,7 +16,7 @@ class FooterMenu extends StatelessWidget {
         menuItems("Privacy policy"),
         menuItems("Contact"),
         menuItems("About"),
-        menuItems("Terms "),
+        menuItems("Terms"),
       ],
     );
   }
@@ -19,7 +25,9 @@ class FooterMenu extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 20),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          _goRoute(name);
+        },
         child: Text(
           name,
           style: const TextStyle(
@@ -30,5 +38,22 @@ class FooterMenu extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _goRoute(String name) {
+    switch (name) {
+      case "Privacy policy":
+        context.go('/privacy_policy');
+        break;
+      case "Contact":
+        context.go('/contact');
+        break;
+      case "About":
+        context.go('/about');
+        break;
+      case "Terms":
+        context.go('/terms');
+        break;
+    }
   }
 }
