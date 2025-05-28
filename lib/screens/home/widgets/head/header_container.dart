@@ -60,7 +60,6 @@ class HeaderBody extends StatefulWidget {
 
 class _HeaderBodyState extends State<HeaderBody> {
   final List<CompilationSearch> searchListRoute = [];
-  bool _isEnableClearIcon = false;
 
   @override
   void initState() {
@@ -124,98 +123,101 @@ class _HeaderBodyState extends State<HeaderBody> {
     );
   }
 
-  Widget _buildSearchBar() {
-    return Autocomplete<CompilationSearch>(
-      optionsMaxHeight: 400,
-      fieldViewBuilder: (
-        context,
-        textEditingController,
-        focusNode,
-        onFieldSubmitted,
-      ) {
-        return Container(
-          padding: const EdgeInsets.only(left: 10, right: 10),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(50),
-          ),
-          child: Center(
-            child: TextField(
-              controller: textEditingController,
-              focusNode: focusNode,
-              decoration: InputDecoration(
-                suffixIcon: _isEnableClearIcon
-                    ? GestureDetector(
-                        onTap: () => textEditingController.clear(),
-                        child: Icon(
-                          Icons.clear,
-                          size: 20,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      )
-                    : null,
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: Theme.of(context).colorScheme.primary,
+  Widget _buildSearchBar() => StatefulBuilder(
+      builder: (context, setLocalState) => Autocomplete<CompilationSearch>(
+            optionsMaxHeight: 400,
+            fieldViewBuilder: (
+              context,
+              textEditingController,
+              focusNode,
+              onFieldSubmitted,
+            ) {
+              // attach listener once
+              textEditingController.addListener(() {
+                setLocalState(() {});
+              });
+              return Container(
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(50),
                 ),
-                hintText: "Search here...",
-                focusedBorder:
-                    UnderlineInputBorder(borderSide: BorderSide.none),
-                enabledBorder:
-                    UnderlineInputBorder(borderSide: BorderSide.none),
-              ),
-            ),
-          ),
-        );
-      },
-      optionsBuilder: (textEditingValue) {
-        setState(() {
-          _isEnableClearIcon = textEditingValue.text.isNotEmpty;
-        });
-        if (textEditingValue.text.isEmpty) {
-          return [];
-        }
-        return searchListRoute.where((searchCls) {
-          return searchCls.searchText
-              .toLowerCase()
-              .contains(textEditingValue.text.toLowerCase());
-        });
-      },
-      displayStringForOption: (option) => option.searchText,
-      onSelected: (searchCls) {
-        var page = searchCls.pageRoute;
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => page,
-          ),
-        );
-      },
-      optionsViewBuilder: (
-        BuildContext context,
-        Function(CompilationSearch) onSelected,
-        Iterable<CompilationSearch> options,
-      ) {
-        return Container(
-          margin: const EdgeInsets.only(top: 15, right: 50, bottom: 400),
-          child: Material(
-            elevation: 10,
-            borderRadius: BorderRadius.circular(20),
-            child: ListView(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              children: options.map((option) {
-                return ListTile(
-                  title: Text(option.searchText),
-                  onTap: () {
-                    onSelected(option);
-                  },
-                );
-              }).toList(),
-            ),
-          ),
-        );
-      },
-    );
-  }
+                child: Center(
+                  child: TextField(
+                    controller: textEditingController,
+                    focusNode: focusNode,
+                    decoration: InputDecoration(
+                      suffixIcon: textEditingController.text.isNotEmpty
+                          ? GestureDetector(
+                              onTap: () => textEditingController.clear(),
+                              child: Icon(
+                                Icons.clear,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                            )
+                          : null,
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      hintText: "Search here...",
+                      focusedBorder:
+                          UnderlineInputBorder(borderSide: BorderSide.none),
+                      enabledBorder:
+                          UnderlineInputBorder(borderSide: BorderSide.none),
+                    ),
+                  ),
+                ),
+              );
+            },
+            optionsBuilder: (textEditingValue) {
+              // setState(() {
+              //   _isEnableClearIcon = textEditingValue.text.isNotEmpty;
+              // });
+              if (textEditingValue.text.isEmpty) {
+                return [];
+              }
+              return searchListRoute.where((searchCls) {
+                return searchCls.searchText
+                    .toLowerCase()
+                    .contains(textEditingValue.text.toLowerCase());
+              });
+            },
+            displayStringForOption: (option) => option.searchText,
+            onSelected: (searchCls) {
+              var page = searchCls.pageRoute;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => page,
+                ),
+              );
+            },
+            optionsViewBuilder: (
+              BuildContext context,
+              Function(CompilationSearch) onSelected,
+              Iterable<CompilationSearch> options,
+            ) {
+              return Container(
+                margin: const EdgeInsets.only(top: 15, right: 50, bottom: 400),
+                child: Material(
+                  elevation: 10,
+                  borderRadius: BorderRadius.circular(20),
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    children: options.map((option) {
+                      return ListTile(
+                        title: Text(option.searchText),
+                        onTap: () {
+                          onSelected(option);
+                        },
+                      );
+                    }).toList(),
+                  ),
+                ),
+              );
+            },
+          ));
 }
