@@ -113,7 +113,7 @@ class _HeaderBodyState extends State<HeaderBody> {
           ),
         ),
         const SizedBox(
-          height: 20,
+          height: 30,
         ),
         _buildSearchBar(),
         const SizedBox(
@@ -124,100 +124,99 @@ class _HeaderBodyState extends State<HeaderBody> {
   }
 
   Widget _buildSearchBar() => StatefulBuilder(
-      builder: (context, setLocalState) => Autocomplete<CompilationSearch>(
-            optionsMaxHeight: 400,
-            fieldViewBuilder: (
-              context,
-              textEditingController,
-              focusNode,
-              onFieldSubmitted,
-            ) {
-              // attach listener once
-              textEditingController.addListener(() {
-                setLocalState(() {});
-              });
-              return Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: Center(
-                  child: TextField(
-                    controller: textEditingController,
-                    focusNode: focusNode,
-                    decoration: InputDecoration(
-                      suffixIcon: textEditingController.text.isNotEmpty
-                          ? GestureDetector(
-                              onTap: () => textEditingController.clear(),
-                              child: Icon(
-                                Icons.clear,
-                                size: 20,
-                                color: Theme.of(context).colorScheme.primary,
-                              ),
-                            )
-                          : null,
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                      hintText: "Search here...",
-                      focusedBorder:
-                          UnderlineInputBorder(borderSide: BorderSide.none),
-                      enabledBorder:
-                          UnderlineInputBorder(borderSide: BorderSide.none),
+        builder: (context, setLocalState) => Autocomplete<CompilationSearch>(
+          optionsMaxHeight: 400,
+          fieldViewBuilder: (
+            context,
+            textEditingController,
+            focusNode,
+            onFieldSubmitted,
+          ) {
+            // attach listener once
+            textEditingController.addListener(() {
+              setLocalState(() {});
+            });
+            return Container(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: Center(
+                child: TextField(
+                  controller: textEditingController,
+                  focusNode: focusNode,
+                  decoration: InputDecoration(
+                    suffixIcon: textEditingController.text.isNotEmpty
+                        ? GestureDetector(
+                            onTap: () => textEditingController.clear(),
+                            child: Icon(
+                              Icons.clear,
+                              size: 20,
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
+                          )
+                        : null,
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
+                    hintText: "Search here...",
+                    focusedBorder:
+                        UnderlineInputBorder(borderSide: BorderSide.none),
+                    enabledBorder:
+                        UnderlineInputBorder(borderSide: BorderSide.none),
                   ),
                 ),
-              );
-            },
-            optionsBuilder: (textEditingValue) {
-              // setState(() {
-              //   _isEnableClearIcon = textEditingValue.text.isNotEmpty;
-              // });
-              if (textEditingValue.text.isEmpty) {
-                return [];
-              }
-              return searchListRoute.where((searchCls) {
-                return searchCls.searchText
-                    .toLowerCase()
-                    .contains(textEditingValue.text.toLowerCase());
-              });
-            },
-            displayStringForOption: (option) => option.searchText,
-            onSelected: (searchCls) {
-              var page = searchCls.pageRoute;
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => page,
-                ),
-              );
-            },
-            optionsViewBuilder: (
-              BuildContext context,
-              Function(CompilationSearch) onSelected,
-              Iterable<CompilationSearch> options,
-            ) {
-              return Container(
-                margin: const EdgeInsets.only(top: 15, right: 50, bottom: 400),
+              ),
+            );
+          },
+          optionsBuilder: (textEditingValue) {
+            if (textEditingValue.text.isEmpty) {
+              return [];
+            }
+            return searchListRoute.where((searchCls) {
+              return searchCls.searchText
+                  .toLowerCase()
+                  .contains(textEditingValue.text.toLowerCase());
+            });
+          },
+          displayStringForOption: (option) => option.searchText,
+          onSelected: (searchCls) {
+            var page = searchCls.pageRoute;
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => page,
+              ),
+            );
+          },
+          optionsViewBuilder: (context, onSelected, options) {
+            return SizedBox(
+              child: Container(
+                margin: const EdgeInsets.only(top: 15, right: 40, bottom: 200),
                 child: Material(
                   elevation: 10,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
                   child: ListView(
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     children: options.map((option) {
                       return ListTile(
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          size: 15,
+                        ),
                         title: Text(option.searchText),
-                        onTap: () {
-                          onSelected(option);
-                        },
+                        onTap: () => onSelected(option),
                       );
                     }).toList(),
                   ),
                 ),
-              );
-            },
-          ));
+              ),
+            );
+          },
+        ),
+      );
 }
