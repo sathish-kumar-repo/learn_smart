@@ -1,38 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// class HeaderWebMenu extends StatelessWidget {
-//   const HeaderWebMenu({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       children: [
-//         menuItems("Home"),
-//         menuItems("Wellora"),
-//         menuItems("Flutter Widgets"),
-//         menuItems("GitHub"),
-//       ],
-//     );
-//   }
-
-//   Padding menuItems(name) {
-//     return Padding(
-//       padding: const EdgeInsets.only(right: 20),
-//       child: InkWell(
-//         onTap: () {},
-//         child: Text(
-//           name,
-//           style: const TextStyle(
-//             fontSize: 16,
-//             color: Colors.white,
-//             letterSpacing: 1,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:learn_smart/utils/web_menu_utils.dart';
 

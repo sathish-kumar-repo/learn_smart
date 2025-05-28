@@ -4,9 +4,12 @@ import 'package:learn_smart/modal/compliation_search.dart';
 import 'package:learn_smart/theme/app_theme.dart';
 import '../../../../data/search_list.dart';
 
-final lottie = Image.asset(
-  cacheWidth: 400,
-  'assets/logo/character.png',
+final lottie = Padding(
+  padding: const EdgeInsets.all(20),
+  child: Image.asset(
+    cacheWidth: 400,
+    'assets/logo/character.png',
+  ),
 );
 
 class HeaderContainer extends StatelessWidget {
