@@ -5,8 +5,13 @@ import 'package:learn_smart/widgets/back_btn.dart';
 class CommonScaffold extends StatelessWidget {
   final String title;
   final Widget body;
+  final EdgeInsetsGeometry pad;
 
-  const CommonScaffold({required this.title, required this.body});
+  const CommonScaffold({
+    required this.title,
+    required this.body,
+    this.pad = const EdgeInsets.all(16.0),
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,7 @@ class CommonScaffold extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: pad,
         child: body,
       ),
     );

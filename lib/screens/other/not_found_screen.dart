@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:learn_smart/screens/other/widgets/common_scaffold.dart';
 
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({super.key});
@@ -8,10 +9,12 @@ class NotFoundPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32.0),
+    return CommonScaffold(
+      title: "Page Not Found",
+      pad: EdgeInsets.all(0),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(20),
+        child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

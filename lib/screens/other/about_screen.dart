@@ -6,19 +6,21 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CommonScaffold(
       title: 'About Code Pro',
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Welcome to Code Pro!",
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          SizedBox(height: 12),
-          Text(
-            "This website contains my personal coding experiments, tutorials, and learning projects. "
-            "I built Code Pro to organize and share my journey in software development.",
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Welcome to Code Pro!",
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            SizedBox(height: 12),
+            Text(
+              "This website contains my personal coding experiments, tutorials, and learning projects. "
+              "I built Code Pro to organize and share my journey in software development.",
+            ),
+          ],
+        ),
       ),
     );
   }
