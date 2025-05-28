@@ -21,7 +21,7 @@ import 'package:learn_smart/learn/CPP/cpp1_Intro.dart';
 Map<String, List<Course>> cardData = {
   'Flutter': [
     Course(
-      course: 'Dart Programming',
+      course: 'Dart',
       img: 'dart.png',
       route: '/dart',
       page: () => DartCourseOverview(),
@@ -80,13 +80,6 @@ Map<String, List<Course>> cardData = {
       route: '/css-project',
       page: () => const Project1(),
     ),
-    // Course(
-    //   course: 'Bootstrap',
-    //   img: 'bootstrap.png',
-    //   page:()=> const IntroBS(),
-    //   des:
-    //       'Harness the power of Bootstrap to build responsive, mobile-first web pages effortlessly.',
-    // ),
     Course(
       course: 'SASS',
       img: 'sassO.png',
@@ -99,7 +92,6 @@ Map<String, List<Course>> cardData = {
       route: '/js',
       page: () => const Basic_Program_in_JS(),
     ),
-
     Course(
       course: 'React',
       img: 'React Native.png',
