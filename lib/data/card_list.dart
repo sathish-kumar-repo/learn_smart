@@ -4,7 +4,6 @@ import 'package:learn_smart/learn/GitHub/ggb01_basic.dart';
 import 'package:learn_smart/modal/course_modal.dart';
 import 'package:learn_smart/learn/english/e1_self_introduction.dart';
 import 'package:learn_smart/learn/CPP%20Program/cpp1_ifStatement.dart';
-import 'package:learn_smart/learn/web/CSS Animation/project1.dart';
 import 'package:learn_smart/learn/web/Mongo Db/mb01_intro.dart';
 import 'package:learn_smart/learn/Python/Py%20Module/pym01_Random.dart';
 import 'package:learn_smart/learn/web/SASS/sass01_Intro.dart';
@@ -73,12 +72,6 @@ Map<String, List<Course>> cardData = {
       img: 'css.png',
       route: '/css',
       page: () => const SelectorsInCss(),
-    ),
-    Course(
-      course: 'CSS mini project',
-      img: 'cssproject.jpg',
-      route: '/css-project',
-      page: () => const Project1(),
     ),
     Course(
       course: 'SASS',

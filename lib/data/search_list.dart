@@ -1,6 +1,5 @@
 import 'package:learn_smart/learn/CPP%20Program/topicName/cpp_program_Topics.dart';
 import 'package:learn_smart/learn/Python/Python%20Program/topicName/pythonProgramTopic.dart';
-import 'package:learn_smart/learn/web/CSS Animation/topicName/css100TJAnimation.dart';
 import 'package:learn_smart/learn/web/Mongo Db/topicsName/mongoDbTopics.dart';
 import 'package:learn_smart/learn/web/SASS/topicsName/SASSTopics.dart';
 import 'package:learn_smart/learn/web/React/topicsName/reactTopics.dart';
@@ -31,7 +30,6 @@ List<List<Topics>> searchList = [
   cPPTopics,
   cPPProgramTopics,
   pythonProgramTopics,
-  tutorJoes100CssAnimationTopics,
   mongoDBTopics,
   sassTopics,
   reactjsTopics,
